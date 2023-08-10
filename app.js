@@ -28,8 +28,9 @@ const { Session } = require('inspector');
 
 mongoose.set('strictQuery', true);
 
+const db_url = process.env.DB_URL;
 //Open mongoose connection
-mongoose.connect('mongodb://127.0.0.1:27017/CampGrounds')
+mongoose.connect(`${db_url}`)
     .then(() => {
         console.log("Server opened!!");
     })
@@ -105,6 +106,6 @@ app.use((err, req, res, next) => {
 })
 
 //Open local server
-app.listen(3000, () => {
+app.listen(5501, () => {
     console.log("opened on port 3000")
 })
