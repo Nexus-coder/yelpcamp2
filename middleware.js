@@ -5,7 +5,9 @@ const { campgroundSchema,reviewSchema } = require('./schemas.js');
 
 module.exports.isLoggedin = (req,res,next) => {
     if (!req.isAuthenticated()){
+        console.log("Original Url", req.originalUrl)
         req.session.returnTo = req.originalUrl;
+        console.log("Return to Url", req.session.returnTo)
         req.flash('success','You need to be signed in');
         return res.redirect('/login');
     }

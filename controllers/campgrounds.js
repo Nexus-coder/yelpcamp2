@@ -20,6 +20,7 @@ module.exports.renderShow = async (req, res) => {
             path: 'review',
             populate: { path: 'author' }
         }).populate('author');
+        console.log(camp)
     res.render('campgrounds/show', { camp })
 }
 
@@ -33,7 +34,8 @@ module.exports.postGround = async (req, res) => {
     camp.images = req.files.map(f => ({ url: f.path, filename: f.filename }))
     camp.author = req.user._id;
     await camp.save();
-    console.log(camp)
+    console.log(camp);
+    //This does not actually do anything important it just adds the message to the session
     req.flash('success', 'Succesfully loaded a new campground');
     res.redirect(`/makeGrounds/${camp._id}`);
 
@@ -65,6 +67,7 @@ module.exports.postEdittedForm = async (req, res) => {
 
 module.exports.deleteRoutes = async (req, res) => {
     const { id } = req.params;
-    await Campground.findByIdAndDelete(id)
+    await Campground.findByIdAndDelete(id);
+    req.flash('success', 'Successfully deleted campground');
     res.redirect('/makeGrounds');
 }

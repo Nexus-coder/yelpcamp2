@@ -1,4 +1,5 @@
 const User = require('../models/user');
+
 module.exports.renderRegisterForm = async (req, res) => {
     res.render('user/register');
 }
@@ -16,7 +17,7 @@ module.exports.postRegisteredForm = async (req, res) => {
 
     } catch (e) {
         req.flash('success', e.message);
-        res.redirect('register');
+        res.redirect('/register');
     }
 }
 
@@ -27,12 +28,14 @@ module.exports.renderLoginForm = async (req, res) => {
 module.exports.postLoginForm = async (req, res) => {
     req.flash('success', 'Welcome back');
     const redirect = req.session.returnTo 
+    console.log(redirect)
     res.redirect(redirect);
 }
 
 module.exports.logout = (req, res, next) => {
     req.logout((err) => {
         if (err) { return next(err); }
+        req.flash('success', 'Logged out')
         res.redirect("/makeGrounds");
     });
 }
