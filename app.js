@@ -3,7 +3,7 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 console.log(process.env.SECRET);
-
+const PORT = process.env.PORT || 5501
 const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
@@ -30,7 +30,7 @@ mongoose.set("strictQuery", true);
 const db_url = process.env.DB_URL;
 //Open mongoose connection
 mongoose
-  .connect(db_url)
+  .connect("mongodb://localhost:27017/Campgrounds")
   .then(() => {
     console.log("Server opened!!");
   })
@@ -81,6 +81,7 @@ passport.deserializeUser(User.deserializeUser());
 app.use((req, res, next) => {
   res.locals.currentUser = req.user;
   res.locals.success = req.flash("success");
+  console.log("This is the locals",res.locals.success)
   res.locals.error = req.flash("error");
   next();
 });
@@ -104,6 +105,6 @@ app.use((err, req, res, next) => {
 });
 
 //Open local server
-app.listen(5510, () => {
-  console.log(`opened on http://localhost:${5510}`);
+app.listen(PORT, () => {
+  console.log(`opened on http://localhost:${PORT}`);
 });
