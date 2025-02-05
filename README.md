@@ -1,11 +1,11 @@
-# Movie  Application - A Clone IMDB App
+# Yelpcamp Application - A destiation booking application
 
 ## How to Build / Run
 
 First, clone the project using :
 
 ```bash
-git clone git@github.com:Nexus-coder/pet_adoption_app.git
+git clone git@github.com:Nexus-coder/yelpcamp2.git
 ```
 
 ## Table of contents
@@ -23,7 +23,7 @@ git clone git@github.com:Nexus-coder/pet_adoption_app.git
 
 ## Overview
 
-This is a todo application built using the MERN stack.The project is a really common productivity tool that is used quite frequently.the reason I made it was to further my express javascript skills.
+This is a destination booking application made using express js which is node framework and plaing html and js and also some bootstrapp css.
 
 
 ### Screenshot
@@ -33,27 +33,22 @@ This is a todo application built using the MERN stack.The project is a really co
 
 ### Links
 
-- Live Site URL: [Todo Application](https://pet-adoption-app-theta.vercel.app/)
+- Live Site URL: [Yelpcamp Application](https://pet-adoption-app-theta.vercel.app/)
 
 ## My Process
 
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- Desktop-first workflow
-- [React](https://reactjs.org/) - JS library
+- Bootstrap CSS
+- Mobile first workflow
 - Express - NodeJS Framework
-
 
 ### What I learned
 
-From this project I have learnt to use clusters and worker threads and also learnt the difference that clusters allow the server to be run cocurrently on different cores or logical cpu while worker threads just make the instance of the same code in the same file.
+From the project i learnt how to use express js as a framework i also learnt what cookies and sessions are and how they help in the application.
 
-I have learnt to do this using the pm2 library which is very handy in helping one to manage processes.
-
-To see how you can add code snippets, see below:
+<!-- To see how you can add code snippets, see below:
 
 ```js
 export default async function fetchSearch({ queryKey }) {
@@ -62,13 +57,7 @@ export default async function fetchSearch({ queryKey }) {
     if (!res.ok) { throw new Error(`pet search not okay: ${animal}, ${location}, ${breed}`); }
     return res.json();
 }
-```
-
-Also from the project I have gotten experience scripting with npm and boosting my productivity.
-
-Finally I have also learnt how to use Mongodb as a database knew it before but I have now gotten better understanding of it.
-
-Also generally i have learnt how to apply node best practices on my projects that i will probably use from now on.
+``` -->
 
 
 ### Continued development
@@ -81,5 +70,5 @@ I will continue learning on how to make use of the express framework to bring a 
 
 ## Author
 
-- Website - [Portfolio](https://portfolio-page-navy-eight.vercel.app/)
+- Website - [Portfolio](https://andrewkimani.tech/)
 - Twitter - [@AndrewK51659634](https://twitter.com/AndrewK51659634)

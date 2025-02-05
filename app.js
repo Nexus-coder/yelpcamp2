@@ -67,6 +67,7 @@ app.use(express.static("public"));
 app.use(flash());
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
+
 //When we have this session now all the request objects will have a session object in the request body
 //The cookie sent to me helps me or gives me some space in memory so that when i come back to the webpage it associates me with the memory
 app.use(session(sessionConfig));
